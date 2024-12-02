@@ -9,9 +9,6 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 .HEROcontainer {
   position: relative; /* Allow for content positioning */
