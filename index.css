@@ -56,7 +56,7 @@ html {
 .title {
   text-align: center;
   color: #F4F2FF;
-  font-family: "Figtree", sans-serif;
+  font-family: "Fugaz One", sans-serif;
   font-size: 3.5rem; /* Responsive font size */
 }
 
@@ -127,6 +127,122 @@ html {
   top: 0;
   padding: 0 20px;
 }
+
+@media(max-width:992px) {
+  .header .header-item {
+
+    display:none;
+  }
+
+
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+.header .toggle-btn {
+  color: #4911A1;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: block; 
+  position: absolute; 
+  right: 1rem; 
+  top: 50%; 
+  right: 5rem;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.Dropdown {
+  font-family: "Figtree";
+  display: block; 
+  position: absolute;
+  right: 5rem;
+  top: 60px;
+  width: 300px;
+  background: #854DFF;
+  backdrop-filter: blur(15px);
+  border-radius: 1rem;
+  overflow: hidden;
+  z-index: 1000;
+  opacity: 0; 
+  transform: translateY(-20px); 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+  pointer-events: none; 
+}
+
+.Dropdown.active {
+  opacity: 1; 
+  transform: translateY(0); 
+  pointer-events: auto; 
+}
+
+.toggle-btn {
+  position: relative;
+  z-index: 1100; 
+}
+
+.Dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #ECE7FF;
+}
+
+.Dropdown li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease; 
+}
+
+.Dropdown.open {
+  display: block;
+}
+
+.toggle-btn.open svg {
+  transform: rotate(90deg);
+}
+
+.Dropdown li:hover {
+  background-color: #5812C5;
+}
+
+@media(max-width:992px) {
+    
+  .header .header-item,
+  .header .social-media .social-icon
+   {
+
+  display: none;
+  }
+  .header .toggle-btn {
+      display: block;
+  }
+  
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  .header .social-media .social-icon
+
+   {
+      display: none;
+  
+  } .header .toggle-btn {
+      display: block;
+  }
+}
+
 
 .header-item {
   color: #4911A1;
@@ -876,7 +992,7 @@ html {
   padding-bottom: 5rem;
   margin-bottom: -10rem;
   z-index: 99999;
-  flex-wrap: wrap; /* Ensures responsiveness */
+  flex-wrap: wrap;
 }
 
 .team-card {
@@ -884,7 +1000,12 @@ html {
   height: 521px;
   box-shadow: 0px 10px 15px rgba(192, 191, 191, 0.3);
   border-radius: 10px;
-  overflow: hidden; /* Ensures image fits within rounded corners */
+  overflow: hidden;
+  transition: transform 0.3s ease; /* Ensure the transition property is set here */
+}
+
+.team-card:hover {
+  transform: scale(1.1); /* This scales the card on hover */
 }
 
 .team-card img {
@@ -894,16 +1015,17 @@ html {
 }
 
 .waveyfooter {
-  position: relative; /* Positioned in relation to the section */
-  z-index: 1; /* Behind the cards */
+  position: relative; 
+  z-index: 1; 
   top: 3rem;
   left: -2rem;
-  width: 110%; /* Full width for the wave */
-  margin-top: -2rem; /* Slight overlap to create the effect */
+  width: 110%; 
+  margin-top: -2rem; 
 }
 
 .waveyfooter svg {
-  width: 100%; /* Ensure the SVG spans the full width of the container */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Removes unwanted inline spacing issues */
+  width: 100%; 
+  height: auto; 
+  display: block; 
 }
+
